@@ -1,7 +1,9 @@
 # prepare kernel configuration
 cp /boot/config-$(uname -r) .config
 
-make defconfig
+# default configuration
+#make defconfig 
+
 echo 'CONFIG_MODULES=y' >> .config
 echo 'CONFIG_MODULE_UNLOAD=y' >> .config
 echo 'CONFIG_MODULE_FORCE_UNLOAD=y' >> .config
