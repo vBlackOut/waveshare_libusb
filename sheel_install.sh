@@ -13,6 +13,6 @@ echo 'CONFIG_DEBUG_FS=y' >> .config
 echo 'CONFIG_GDB_SCRIPTS=y' >> .config
 echo 'CONFIG_MAGIC_SYSRQ=y' >> .config
 
-make
-make prepare
-make modules_prepare
+make -j$(nproc)
+make modules_install
+make install
