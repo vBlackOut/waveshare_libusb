@@ -1,3 +1,9 @@
+apk add build-base linux-headers linux-lts-dev wget ncurses-dev bc flex bison elfutils-dev
+
+wget https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.6.tar.xz
+tar -xvf linux-6.6.tar.xz
+mv linux-6.6 /usr/src/linux-headers-6.6.34-1-lts
+
 # prepare kernel configuration
 cp /boot/config-$(uname -r) .config
 
