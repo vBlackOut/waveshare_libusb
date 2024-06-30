@@ -12,3 +12,6 @@ echo 'CONFIG_GDB_SCRIPTS=y' >> .config
 echo 'CONFIG_MAGIC_SYSRQ=y' >> .config
 
 make olddefconfig
+make oldconfig
+make prepare
+make modules_prepare
