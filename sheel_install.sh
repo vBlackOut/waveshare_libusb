@@ -22,3 +22,20 @@ echo 'CONFIG_MAGIC_SYSRQ=y' >> .config
 make -j$(nproc)
 make modules_install
 make install
+
+# aller dans le repertoire waveshare pour compiler
+make
+
+# preparation du noyaux linux avec le driver
+cp ch34x_pis.ko /lib/modules/$(uname -r)/kernel/drivers/
+depmod
+modprobe ch34x_pis
+
+# verification
+lsmod | grep ch34x_pis
+
+# ajout au chargement / boot /démarrage de la machine
+echo "ch34x_pis" | sudo tee -a /etc/modules
+
+# test du module
+dmesg | grep ch34x
