@@ -1,4 +1,5 @@
 # prepare kernel configuration
+cp /boot/config-$(uname -r) .config
 
 make defconfig
 echo 'CONFIG_MODULES=y' >> .config
